@@ -13,13 +13,39 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QLabel" name="searchTipoLabel">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>40</y>
-     <width>511</width>
-     <height>262</height>
+     <x>440</x>
+     <y>10</y>
+     <width>151</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Tipo Torneo</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="searchTotaleLabel">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>280</y>
+     <width>161</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Totale da pagare</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>130</y>
+     <width>249</width>
+     <height>64</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -44,33 +70,120 @@
       </property>
      </widget>
     </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="labelNome">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>50</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nome</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>80</y>
+     <width>309</width>
+     <height>169</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <widget class="QTableWidget" name="ListaTableWidget">
-      <column>
-       <property name="text">
-        <string>Tipo</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Nome</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Giocatori</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>BuyIn</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Durata</string>
-       </property>
-      </column>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="searchLabelNome">
+        <property name="text">
+         <string>Nome</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="searchNomeEdit"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="editNomeButton">
+        <property name="text">
+         <string>Modifica</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="searchLabelGioc">
+        <property name="text">
+         <string>Giocatori</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="searchGiocEdit"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="editGiocButton">
+        <property name="text">
+         <string>Modifica</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="searchImportoLabel">
+        <property name="text">
+         <string>Importo</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="searchImportoEdit"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="editImportoButton">
+        <property name="text">
+         <string>Modifica</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLabel" name="searchBuyInLabel">
+        <property name="text">
+         <string>BuyIn</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="searchBuyInEdit"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="editBuyInButton">
+        <property name="text">
+         <string>Modifica</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="searchDeleteButton">
+      <property name="text">
+       <string>Elimina</string>
+      </property>
      </widget>
     </item>
    </layout>

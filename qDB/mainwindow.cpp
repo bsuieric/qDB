@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "searchwindow.h"
+#include "elencotornei.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -94,6 +95,7 @@ bool MainWindow::addTorneo(){
             QMessageBox info;
             info.setText("Conto creato e salvato con successo!");
             info.exec();
+            emit aggiuntoNuovoTorneo();
             resetCampiDati();
             return true;
             }
@@ -131,11 +133,9 @@ void MainWindow::resetCampiDati(){
 void MainWindow::on_ListaTorneiButton_clicked()
 {
     SearchWindow *sw = new SearchWindow;
+    sw->bindElenco(elenco);
     //connect(dsa, SIGNAL(infoElencoChanged()), this, SLOT(onReloadInfoConti()));
     sw->show();
 
 }
 
-void MainWindow::elencoTornei(){
-
-}

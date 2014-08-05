@@ -36,13 +36,17 @@ public:
     bool addSitAndGoIfNotPresent(string, int, double, double);
     void addCash(string, int, double, int);
     bool addCashIfNotPresent(string, int, double, int);
-    void deleteTorneo(const string &);
-    SmartPtr searchTorneo(const string&)const;
+    bool deleteTorneo(const string &);
+    SmartPtr searchTorneo(const string&);
     Cash& modificaCash(const SmartPtr&);
     SitAndGo& modificaSitAndGo(const SmartPtr &);
 
+    Container<ElencoTornei::SmartPtr>::Iterator editTornei(const string& nome);
+
+
     Container<SmartPtr>::Iterator& getIterator(const string &);
     SmartPtr& getAccount(Container<ElencoTornei::SmartPtr>::Iterator);
+
 
 private:
     Container<SmartPtr>* elenco;

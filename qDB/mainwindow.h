@@ -31,7 +31,6 @@ private:
     ElencoTornei *elenco;
     bool addTorneo();
     void resetCampiDati();
-    void elencoTornei();
 };
 
 #endif // MAINWINDOW_H

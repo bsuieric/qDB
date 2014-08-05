@@ -66,7 +66,7 @@ bool ElencoTornei::addCashIfNotPresent(string n, int num, double tax, int tempo)
 
 bool ElencoTornei::addTorneo(const SmartPtr& s){
     bool presente=false;
-    Container<SmartPtr>::const_Iterator it = elenco->begin();
+    Container<SmartPtr>::Iterator it = elenco->begin();
     for(; it!=elenco->end() && !presente ;++it){
         SmartPtr * t=static_cast<SmartPtr*>(&(it.getPunt()->info));
         if(t){
@@ -82,8 +82,7 @@ bool ElencoTornei::addTorneo(const SmartPtr& s){
         return presente;
 }
 
-
-void ElencoTornei::deleteTorneo(const string& nome){
+bool ElencoTornei::deleteTorneo(const string& nome){
     bool presente=false;
     Container<SmartPtr>::const_Iterator it = elenco->begin();
     for(; it!=elenco->end() && !presente ;++it){
@@ -95,11 +94,13 @@ void ElencoTornei::deleteTorneo(const string& nome){
             }
         }
     }
-    if(!presente)
-        std::cerr<<"Il torneo non e' stato trovato"<<endl;
+    return presente;
 }
 
-ElencoTornei::SmartPtr ElencoTornei::searchTorneo(const string& nameT) const{
+
+
+
+ElencoTornei::SmartPtr ElencoTornei::searchTorneo(const string& nameT){
     Container<SmartPtr>::Iterator it = elenco->begin();
     for(; it != elenco->end(); ++it){
         SmartPtr* t = static_cast<SmartPtr*>(& (it.getPunt()->info) );
@@ -145,6 +146,19 @@ SitAndGo& ElencoTornei::modificaSitAndGo(const SmartPtr & i){
         return *s;
 }
 
+Container<ElencoTornei::SmartPtr>::Iterator ElencoTornei::editTornei(const string& nome){
+    bool presente=false;
+    Container<SmartPtr>::Iterator it = elenco->begin();
+    for(; it!=elenco->end() && !presente ;++it){
+        SmartPtr * t=static_cast<SmartPtr*>(&(it.getPunt()->info));
+        if(t){
+            if(t->getTorneo()->getNome()==nome){
+                    return it;
+            }
+        }
+    }
+}
+
 ostream& operator<<(ostream& os, const ElencoTornei& e){
   Container<ElencoTornei::SmartPtr>::Iterator it=e.elenco->begin();
   for(; it!=e.elenco->end(); ++it){
@@ -155,3 +169,5 @@ ostream& operator<<(ostream& os, const ElencoTornei& e){
   }
   return os;
 }
+
+

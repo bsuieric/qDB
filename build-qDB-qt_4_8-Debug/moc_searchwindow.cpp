@@ -22,25 +22,48 @@ static const uint qt_meta_data_SearchWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
+ // slots: signature, parameters, type, tag, flags
+      14,   13,   13,   13, 0x08,
+      43,   13,   13,   13, 0x08,
+      75,   13,   13,   13, 0x08,
+     103,   13,   13,   13, 0x08,
+     131,   13,   13,   13, 0x08,
+     162,   13,   13,   13, 0x08,
+
        0        // eod
 };
 
 static const char qt_meta_stringdata_SearchWindow[] = {
-    "SearchWindow\0"
+    "SearchWindow\0\0on_CercaPushButton_clicked()\0"
+    "on_searchDeleteButton_clicked()\0"
+    "on_editNomeButton_clicked()\0"
+    "on_editGiocButton_clicked()\0"
+    "on_editImportoButton_clicked()\0"
+    "on_editBuyInButton_clicked()\0"
 };
 
 void SearchWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    Q_UNUSED(_o);
-    Q_UNUSED(_id);
-    Q_UNUSED(_c);
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        SearchWindow *_t = static_cast<SearchWindow *>(_o);
+        switch (_id) {
+        case 0: _t->on_CercaPushButton_clicked(); break;
+        case 1: _t->on_searchDeleteButton_clicked(); break;
+        case 2: _t->on_editNomeButton_clicked(); break;
+        case 3: _t->on_editGiocButton_clicked(); break;
+        case 4: _t->on_editImportoButton_clicked(); break;
+        case 5: _t->on_editBuyInButton_clicked(); break;
+        default: ;
+        }
+    }
     Q_UNUSED(_a);
 }
 
@@ -75,6 +98,11 @@ int SearchWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 6)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 6;
+    }
     return _id;
 }
 QT_END_MOC_NAMESPACE
