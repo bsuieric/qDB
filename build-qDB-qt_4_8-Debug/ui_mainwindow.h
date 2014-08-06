@@ -14,11 +14,13 @@
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QComboBox>
+#include <QtGui/QGroupBox>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QLineEdit>
 #include <QtGui/QMainWindow>
+#include <QtGui/QMenu>
 #include <QtGui/QMenuBar>
 #include <QtGui/QPushButton>
 #include <QtGui/QStatusBar>
@@ -48,8 +50,20 @@ public:
     QLabel *BuyInLabel;
     QLineEdit *BuyInLineEdit;
     QPushButton *addTorneo;
-    QPushButton *ListaTorneiButton;
+    QGroupBox *groupBoxRicerca;
+    QPushButton *cercaButton;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QLabel *labelNomeRicerca;
+    QLineEdit *lineEditRicerca;
+    QLabel *labelInfo;
+    QGroupBox *groupBoxInformazioni;
+    QLabel *labelAddizionale;
+    QLabel *labelTotaleTornei;
+    QLabel *labelInfoAdd;
+    QLabel *labelinfoTot;
     QMenuBar *menuBar;
+    QMenu *menuTornei_di_Poker;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -62,7 +76,7 @@ public:
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(151, 32, 277, 202));
+        layoutWidget->setGeometry(QRect(30, 30, 277, 202));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -142,13 +156,57 @@ public:
 
         verticalLayout->addWidget(addTorneo);
 
-        ListaTorneiButton = new QPushButton(centralWidget);
-        ListaTorneiButton->setObjectName(QString::fromUtf8("ListaTorneiButton"));
-        ListaTorneiButton->setGeometry(QRect(200, 280, 181, 27));
+        groupBoxRicerca = new QGroupBox(centralWidget);
+        groupBoxRicerca->setObjectName(QString::fromUtf8("groupBoxRicerca"));
+        groupBoxRicerca->setGeometry(QRect(380, 30, 271, 151));
+        cercaButton = new QPushButton(groupBoxRicerca);
+        cercaButton->setObjectName(QString::fromUtf8("cercaButton"));
+        cercaButton->setGeometry(QRect(40, 80, 181, 27));
+        widget = new QWidget(groupBoxRicerca);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(10, 30, 247, 29));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        labelNomeRicerca = new QLabel(widget);
+        labelNomeRicerca->setObjectName(QString::fromUtf8("labelNomeRicerca"));
+
+        horizontalLayout->addWidget(labelNomeRicerca);
+
+        lineEditRicerca = new QLineEdit(widget);
+        lineEditRicerca->setObjectName(QString::fromUtf8("lineEditRicerca"));
+
+        horizontalLayout->addWidget(lineEditRicerca);
+
+        labelInfo = new QLabel(centralWidget);
+        labelInfo->setObjectName(QString::fromUtf8("labelInfo"));
+        labelInfo->setEnabled(true);
+        labelInfo->setGeometry(QRect(400, 160, 231, 71));
+        labelInfo->setScaledContents(false);
+        labelInfo->setWordWrap(true);
+        groupBoxInformazioni = new QGroupBox(centralWidget);
+        groupBoxInformazioni->setObjectName(QString::fromUtf8("groupBoxInformazioni"));
+        groupBoxInformazioni->setGeometry(QRect(70, 240, 531, 91));
+        labelAddizionale = new QLabel(groupBoxInformazioni);
+        labelAddizionale->setObjectName(QString::fromUtf8("labelAddizionale"));
+        labelAddizionale->setGeometry(QRect(350, 30, 67, 17));
+        labelTotaleTornei = new QLabel(groupBoxInformazioni);
+        labelTotaleTornei->setObjectName(QString::fromUtf8("labelTotaleTornei"));
+        labelTotaleTornei->setGeometry(QRect(350, 60, 67, 17));
+        labelInfoAdd = new QLabel(groupBoxInformazioni);
+        labelInfoAdd->setObjectName(QString::fromUtf8("labelInfoAdd"));
+        labelInfoAdd->setGeometry(QRect(10, 30, 331, 17));
+        labelinfoTot = new QLabel(groupBoxInformazioni);
+        labelinfoTot->setObjectName(QString::fromUtf8("labelinfoTot"));
+        labelinfoTot->setGeometry(QRect(10, 60, 301, 17));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 687, 25));
+        menuTornei_di_Poker = new QMenu(menuBar);
+        menuTornei_di_Poker->setObjectName(QString::fromUtf8("menuTornei_di_Poker"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -156,6 +214,8 @@ public:
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
         MainWindow->setStatusBar(statusBar);
+
+        menuBar->addAction(menuTornei_di_Poker->menuAction());
 
         retranslateUi(MainWindow);
 
@@ -175,7 +235,16 @@ public:
         ImportoLabel->setText(QApplication::translate("MainWindow", "Importo", 0, QApplication::UnicodeUTF8));
         BuyInLabel->setText(QApplication::translate("MainWindow", "BuyIn", 0, QApplication::UnicodeUTF8));
         addTorneo->setText(QApplication::translate("MainWindow", "Aggiungi", 0, QApplication::UnicodeUTF8));
-        ListaTorneiButton->setText(QApplication::translate("MainWindow", "Lista Tornei", 0, QApplication::UnicodeUTF8));
+        groupBoxRicerca->setTitle(QApplication::translate("MainWindow", "Spazio Ricerca", 0, QApplication::UnicodeUTF8));
+        cercaButton->setText(QApplication::translate("MainWindow", "Cerca", 0, QApplication::UnicodeUTF8));
+        labelNomeRicerca->setText(QApplication::translate("MainWindow", "Nome Torneo", 0, QApplication::UnicodeUTF8));
+        labelInfo->setText(QApplication::translate("MainWindow", "Attraverso la ricerca e' possibile eliminare o modificare il torneo", 0, QApplication::UnicodeUTF8));
+        groupBoxInformazioni->setTitle(QApplication::translate("MainWindow", "Informazioni", 0, QApplication::UnicodeUTF8));
+        labelAddizionale->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
+        labelTotaleTornei->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
+        labelInfoAdd->setText(QApplication::translate("MainWindow", "Per i tornei Cash c'e' un'addizionale unica di :", 0, QApplication::UnicodeUTF8));
+        labelinfoTot->setText(QApplication::translate("MainWindow", "Il numero totale di tornei e' :", 0, QApplication::UnicodeUTF8));
+        menuTornei_di_Poker->setTitle(QApplication::translate("MainWindow", "Tornei di Poker", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

@@ -93,7 +93,7 @@ bool MainWindow::addTorneo(){
                 }
 
             QMessageBox info;
-            info.setText("Conto creato e salvato con successo!");
+            info.setText("Torneo creato e salvato con successo!");
             info.exec();
             emit aggiuntoNuovoTorneo();
             resetCampiDati();
@@ -130,12 +130,34 @@ void MainWindow::resetCampiDati(){
 }
 
 
-void MainWindow::on_ListaTorneiButton_clicked()
+
+
+void MainWindow::on_cercaButton_clicked()
 {
     SearchWindow *sw = new SearchWindow;
-    sw->bindElenco(elenco);
-    //connect(dsa, SIGNAL(infoElencoChanged()), this, SLOT(onReloadInfoConti()));
-    sw->show();
-
+    QString name = ui->lineEditRicerca->text();
+    if(name==""){
+        QMessageBox err;
+        err.setText("Nome non permesso");
+        ui->lineEditRicerca->setText("");
+        err.exec();
+    }
+    else{
+        ElencoTornei::SmartPtr p=elenco->searchTorneo(ui->lineEditRicerca->text().toStdString());
+        if(p==0){
+            QMessageBox err;
+            err.setText("Nessun torneo trovato");
+            err.exec();
+            ui->lineEditRicerca->setText("");
+        }
+        else{
+            sw->bindElenco(elenco,ui->lineEditRicerca->text());
+            sw->show();
+        }
+    }
 }
 
+void MainWindow::loadTorneiInfo(){
+    //ui->labelAddizionale->setText(QString::number(elenco->getAddCash())+" €");
+    //ui->labelTotaleTornei->setText(QString::number(elenco->getNumeroTotaleTornei()));
+}

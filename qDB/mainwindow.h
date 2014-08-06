@@ -24,13 +24,14 @@ private slots:
 
     void on_sceltaTorneo_currentIndexChanged(const QString &arg1);
 
-    void on_ListaTorneiButton_clicked();
+    void on_cercaButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     ElencoTornei *elenco;
     bool addTorneo();
     void resetCampiDati();
+    void loadTorneiInfo();
 };
 
 #endif // MAINWINDOW_H

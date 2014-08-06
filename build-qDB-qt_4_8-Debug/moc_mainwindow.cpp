@@ -44,7 +44,7 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "MainWindow\0\0aggiuntoNuovoTorneo()\0"
     "on_addTorneo_clicked()\0arg1\0"
     "on_sceltaTorneo_currentIndexChanged(QString)\0"
-    "on_ListaTorneiButton_clicked()\0"
+    "on_cercaButton_clicked()\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -56,7 +56,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 0: _t->aggiuntoNuovoTorneo(); break;
         case 1: _t->on_addTorneo_clicked(); break;
         case 2: _t->on_sceltaTorneo_currentIndexChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 3: _t->on_ListaTorneiButton_clicked(); break;
+        case 3: _t->on_cercaButton_clicked(); break;
         default: ;
         }
     }

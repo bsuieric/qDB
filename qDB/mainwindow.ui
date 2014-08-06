@@ -17,8 +17,8 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>151</x>
-      <y>32</y>
+      <x>30</x>
+      <y>30</y>
       <width>277</width>
       <height>202</height>
      </rect>
@@ -103,18 +103,140 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="ListaTorneiButton">
+   <widget class="QGroupBox" name="groupBoxRicerca">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>280</y>
-      <width>181</width>
-      <height>27</height>
+      <x>380</x>
+      <y>30</y>
+      <width>271</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Spazio Ricerca</string>
+    </property>
+    <widget class="QPushButton" name="cercaButton">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>80</y>
+       <width>181</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Cerca</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>247</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="labelNomeRicerca">
+        <property name="text">
+         <string>Nome Torneo</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEditRicerca"/>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="labelInfo">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>160</y>
+      <width>231</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
-     <string>Lista Tornei</string>
+     <string>Attraverso la ricerca e' possibile eliminare o modificare il torneo</string>
     </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxInformazioni">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>240</y>
+      <width>531</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Informazioni</string>
+    </property>
+    <widget class="QLabel" name="labelAddizionale">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>30</y>
+       <width>67</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelTotaleTornei">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>60</y>
+       <width>67</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelInfoAdd">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>331</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Per i tornei Cash c'e' un'addizionale unica di :</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelinfoTot">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>301</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Il numero totale di tornei e' :</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -126,6 +248,12 @@
      <height>25</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuTornei_di_Poker">
+    <property name="title">
+     <string>Tornei di Poker</string>
+    </property>
+   </widget>
+   <addaction name="menuTornei_di_Poker"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">

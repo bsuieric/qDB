@@ -20,12 +20,12 @@ public:
     explicit SearchWindow(QWidget *parent = 0);
     ~SearchWindow();
 
-   void bindElenco(ElencoTornei*);
+   void bindElenco(ElencoTornei*, QString);
+
+   void setNomeTorneo(QString);
 
 
 private slots:
-    void on_CercaPushButton_clicked();
-
     void on_searchDeleteButton_clicked();
 
     void on_editNomeButton_clicked();
@@ -36,14 +36,21 @@ private slots:
 
     void on_editBuyInButton_clicked();
 
+signals:
+
 private:
     Ui::SearchWindow *ui;
 
     ElencoTornei *el;
 
+    QString nomeTorneo;
+
     void resetNome();
 
     void resetCampi();
+
+    void setCampiRicerca();
+
 
 };
 

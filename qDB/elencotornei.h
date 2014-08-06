@@ -43,6 +43,9 @@ public:
 
     Container<ElencoTornei::SmartPtr>::Iterator editTornei(const string& nome);
 
+    //int getNumeroTotaleTornei();
+
+    //double getAddCash();
 
     Container<SmartPtr>::Iterator& getIterator(const string &);
     SmartPtr& getAccount(Container<ElencoTornei::SmartPtr>::Iterator);
