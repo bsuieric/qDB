@@ -53,13 +53,13 @@ public:
     {
         if (SearchWindow->objectName().isEmpty())
             SearchWindow->setObjectName(QString::fromUtf8("SearchWindow"));
-        SearchWindow->resize(350, 332);
+        SearchWindow->resize(329, 334);
         searchTipoLabel = new QLabel(SearchWindow);
         searchTipoLabel->setObjectName(QString::fromUtf8("searchTipoLabel"));
         searchTipoLabel->setGeometry(QRect(100, 20, 151, 17));
         searchTotaleLabel = new QLabel(SearchWindow);
         searchTotaleLabel->setObjectName(QString::fromUtf8("searchTotaleLabel"));
-        searchTotaleLabel->setGeometry(QRect(40, 50, 251, 17));
+        searchTotaleLabel->setGeometry(QRect(40, 50, 261, 17));
         layoutWidget = new QWidget(SearchWindow);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         layoutWidget->setGeometry(QRect(10, 100, 309, 169));
@@ -166,7 +166,7 @@ public:
         editNomeButton->setText(QApplication::translate("SearchWindow", "Modifica", 0, QApplication::UnicodeUTF8));
         searchLabelGioc->setText(QApplication::translate("SearchWindow", "Giocatori", 0, QApplication::UnicodeUTF8));
         editGiocButton->setText(QApplication::translate("SearchWindow", "Modifica", 0, QApplication::UnicodeUTF8));
-        searchImportoLabel->setText(QApplication::translate("SearchWindow", "Importo", 0, QApplication::UnicodeUTF8));
+        searchImportoLabel->setText(QApplication::translate("SearchWindow", "Importo\342\202\254", 0, QApplication::UnicodeUTF8));
         editImportoButton->setText(QApplication::translate("SearchWindow", "Modifica", 0, QApplication::UnicodeUTF8));
         searchBuyInLabel->setText(QApplication::translate("SearchWindow", "BuyIn", 0, QApplication::UnicodeUTF8));
         editBuyInButton->setText(QApplication::translate("SearchWindow", "Modifica", 0, QApplication::UnicodeUTF8));

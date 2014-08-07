@@ -30,6 +30,6 @@ int main(int argc, char *argv[])
 //    el.modificaCash(el.getAccount(el.editTornei("noi"))).resetNome("noiiii");
 
 
-//    cout<<el<<endl;
+//    cout<<el.getAddCash()<<endl;
 
 //}

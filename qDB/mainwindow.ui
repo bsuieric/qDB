@@ -6,21 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>687</width>
-    <height>403</height>
+    <width>721</width>
+    <height>512</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextOnly</enum>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>30</y>
+      <y>70</y>
       <width>277</width>
-      <height>202</height>
+      <height>286</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -106,10 +109,10 @@
    <widget class="QGroupBox" name="groupBoxRicerca">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>30</y>
+      <x>400</x>
+      <y>20</y>
       <width>271</width>
-      <height>151</height>
+      <height>371</height>
      </rect>
     </property>
     <property name="title">
@@ -119,7 +122,7 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>80</y>
+       <y>60</y>
        <width>181</width>
        <height>27</height>
       </rect>
@@ -128,7 +131,7 @@
       <string>Cerca</string>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -150,36 +153,65 @@
       </item>
      </layout>
     </widget>
-   </widget>
-   <widget class="QLabel" name="labelInfo">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>160</y>
-      <width>231</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Attraverso la ricerca e' possibile eliminare o modificare il torneo</string>
-    </property>
-    <property name="scaledContents">
-     <bool>false</bool>
-    </property>
-    <property name="wordWrap">
-     <bool>true</bool>
-    </property>
+    <widget class="QLabel" name="labelInfo">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>231</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Abyssinica SIL</family>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="text">
+      <string>Attraverso la ricerca o il doppio click sulla lista e' possibile eliminare o modificare i dati del torneo</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="torneiListWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>220</y>
+       <width>256</width>
+       <height>141</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>200</y>
+       <width>101</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Lista Tornei</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBoxInformazioni">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>240</y>
-      <width>531</width>
-      <height>91</height>
+      <x>10</x>
+      <y>400</y>
+      <width>381</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="title">
@@ -188,21 +220,8 @@
     <widget class="QLabel" name="labelAddizionale">
      <property name="geometry">
       <rect>
-       <x>350</x>
-       <y>30</y>
-       <width>67</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="labelTotaleTornei">
-     <property name="geometry">
-      <rect>
-       <x>350</x>
-       <y>60</y>
+       <x>310</x>
+       <y>20</y>
        <width>67</width>
        <height>17</height>
       </rect>
@@ -214,27 +233,14 @@
     <widget class="QLabel" name="labelInfoAdd">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>331</width>
+       <x>0</x>
+       <y>20</y>
+       <width>311</width>
        <height>17</height>
       </rect>
      </property>
      <property name="text">
       <string>Per i tornei Cash c'e' un'addizionale unica di :</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="labelinfoTot">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>60</y>
-       <width>301</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Il numero totale di tornei e' :</string>
      </property>
     </widget>
    </widget>
@@ -244,7 +250,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>687</width>
+     <width>721</width>
      <height>25</height>
     </rect>
    </property>

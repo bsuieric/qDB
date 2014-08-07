@@ -43,7 +43,7 @@ void SearchWindow::setCampiRicerca()
       }
       else
           if(cash){
-              ui->searchBuyInLabel->setText("Durata");
+              ui->searchBuyInLabel->setText("Durata/h");
               ui->searchNomeEdit->setText(QString::fromStdString(cash->getNome()));
               ui->searchGiocEdit->setText(QString::number(cash->getNumeroGiocatori()));
               ui->searchImportoEdit->setText(QString::number(cash->getTaxPerGiocatore()));
@@ -68,6 +68,7 @@ void SearchWindow::on_searchDeleteButton_clicked()
                                       QMessageBox::Yes, QMessageBox::Cancel);
       if(reply == QMessageBox::Yes){
             resetCampi();
+            emit torneoRemove(nomeTorneo);
             bool presente=el->deleteTorneo(nomeTorneo.toStdString());
             if(presente==0){
                 QMessageBox err;
@@ -100,10 +101,12 @@ void SearchWindow::on_editNomeButton_clicked()
                 Cash* cash=dynamic_cast<Cash*>(cerca.getTorneo());
                 if(sit){
                     el->modificaSitAndGo(el->getAccount(el->editTornei(nomeTorneo.toStdString()))).resetNome(resetNome.toStdString());
+                    emit nameChanged(resetNome,nomeTorneo);
                     this->setNomeTorneo(resetNome);
                 }
                 else if(cash){
                     el->modificaCash(el->getAccount(el->editTornei(nomeTorneo.toStdString()))).resetNome(resetNome.toStdString());
+                    emit nameChanged(resetNome, nomeTorneo);
                     this->setNomeTorneo(resetNome);
                 }
             }

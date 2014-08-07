@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>350</width>
-    <height>332</height>
+    <width>329</width>
+    <height>334</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,7 +31,7 @@
     <rect>
      <x>40</x>
      <y>50</y>
-     <width>251</width>
+     <width>261</width>
      <height>17</height>
     </rect>
    </property>
@@ -96,7 +96,7 @@
       <item>
        <widget class="QLabel" name="searchImportoLabel">
         <property name="text">
-         <string>Importo</string>
+         <string>Importo€</string>
         </property>
        </widget>
       </item>

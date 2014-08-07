@@ -159,13 +159,18 @@ Container<ElencoTornei::SmartPtr>::Iterator ElencoTornei::editTornei(const strin
     }
 }
 
-//double ElencoTornei::getAddCash(){
-//    return Cash::getAddizionale();
-//}
+double ElencoTornei::getAddCash(){
+    return Cash::getAddizionale();
+}
 
-//int ElencoTornei::getNumeroTotaleTornei(){
-//    return elenco->getSize();
-//}
+string ElencoTornei::nomiSalvati(const ElencoTornei& e){
+    Container<ElencoTornei::SmartPtr>::Iterator it=e.elenco->begin();
+    for(; it!=e.elenco->end(); ++it){
+        ElencoTornei::SmartPtr* t=static_cast<ElencoTornei::SmartPtr*>(&(it.getPunt()->info));
+        if(t)
+            return t->getTorneo()->getNome();
+     }
+}
 
 ostream& operator<<(ostream& os, const ElencoTornei& e){
   Container<ElencoTornei::SmartPtr>::Iterator it=e.elenco->begin();

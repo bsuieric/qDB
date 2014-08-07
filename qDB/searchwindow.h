@@ -37,6 +37,8 @@ private slots:
     void on_editBuyInButton_clicked();
 
 signals:
+    void nameChanged(QString,QString);
+    void torneoRemove(QString);
 
 private:
     Ui::SearchWindow *ui;
